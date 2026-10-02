@@ -1,0 +1,50 @@
+.app-shell {
+  position: relative;
+  min-height: 100dvh;
+  overflow-x: clip;
+}
+
+.app-shell .app-shell__petals {
+  position: fixed;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.app-shell__main {
+  position: relative;
+  z-index: 1;
+  padding: var(--space-4) var(--space-4) calc(var(--bottom-nav-height) + var(--safe-bottom) + 36px);
+}
+
+.app-shell__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+.app-shell__page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-width: 0;
+  animation: fade-up var(--duration-slow) var(--ease-out) both;
+}
+
+@media (min-width: 768px) {
+  .app-shell__main {
+    padding-inline: var(--space-8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .app-shell__main {
+    padding: var(--space-8) var(--space-10) var(--space-12) calc(var(--sidebar-width) + 16px + var(--space-10));
+  }
+
+  .app-shell__page {
+    gap: var(--space-8);
+  }
+}

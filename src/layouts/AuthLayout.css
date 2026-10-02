@@ -1,0 +1,22 @@
+.auth-layout {
+  position: relative;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: var(--space-6) var(--space-4);
+  overflow: hidden;
+  background: radial-gradient(120% 80% at 50% 0%, #fff6fa 0%, #ffe6f0 50%, #f3e3ff 100%);
+}
+
+.auth-layout__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.auth-layout__main {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+}

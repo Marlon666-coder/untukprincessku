@@ -1,0 +1,38 @@
+.fav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--color-border-strong);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--color-primary-strong);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  transition: background var(--duration-base), transform var(--duration-fast) var(--ease-spring);
+}
+
+.fav-btn--compact {
+  width: 40px;
+  padding: 0;
+}
+
+.fav-btn__heart {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.fav-btn.is-active {
+  background: var(--pink-100);
+  border-color: transparent;
+}
+
+.fav-btn.is-active .fav-btn__heart {
+  animation: heart-beat 0.7s ease both;
+}
+
+.fav-btn:active {
+  transform: scale(0.92);
+}

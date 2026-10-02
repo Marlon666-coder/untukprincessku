@@ -1,0 +1,172 @@
+.story {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding-left: 30px;
+}
+
+/* Dotted "thread" running through the timeline */
+.story::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 14px;
+  border-left: 3px dotted var(--pink-300);
+}
+
+.story__month {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.story__month-label {
+  position: relative;
+  align-self: flex-start;
+  margin-left: -30px;
+  padding: 4px 16px;
+  border-radius: var(--radius-full);
+  background: var(--gradient-primary);
+  color: var(--white);
+  font-size: 1.35rem;
+  box-shadow: var(--shadow-md);
+  z-index: 1;
+}
+
+.story__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.story__item {
+  position: relative;
+}
+
+.story__dot {
+  position: absolute;
+  left: -32px;
+  top: 18px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--pink-200);
+  box-shadow: var(--shadow-sm);
+  font-size: 0.95rem;
+  z-index: 1;
+}
+
+.story__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: 10px 10px var(--space-4);
+  background: #fffdfb;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(91, 35, 64, 0.06), 0 16px 30px -18px rgba(91, 35, 64, 0.4);
+  transform: rotate(var(--tilt, 0deg));
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.story__card::before {
+  content: '';
+  position: absolute;
+  top: -9px;
+  left: 24px;
+  width: 70px;
+  height: 18px;
+  transform: rotate(-4deg);
+  background: repeating-linear-gradient(-45deg, rgba(247, 155, 191, 0.55) 0 7px, rgba(230, 217, 255, 0.7) 7px 14px);
+  z-index: 1;
+}
+
+.story__card:hover {
+  transform: rotate(0deg) translateY(-3px);
+}
+
+.story__card .photo-frame {
+  border-radius: 4px;
+}
+
+.story__content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 6px;
+}
+
+.story__date {
+  font-size: var(--text-xs);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.story__content h3 {
+  font-size: var(--text-lg);
+}
+
+.story__place {
+  font-size: var(--text-sm);
+  color: var(--color-text-soft);
+  font-weight: 600;
+}
+
+.story__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-soft);
+}
+
+.story__fav {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+}
+
+/* Desktop: alternate cards left and right of a centre line */
+@media (min-width: 900px) {
+  .story {
+    padding-left: 0;
+  }
+
+  .story::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .story__month-label {
+    align-self: center;
+    margin-left: 0;
+  }
+
+  .story__item {
+    width: calc(50% - 36px);
+  }
+
+  .story__item--right {
+    align-self: flex-end;
+  }
+
+  .story__list {
+    gap: var(--space-2);
+  }
+
+  .story__item--left .story__dot {
+    left: auto;
+    right: -53px;
+  }
+
+  .story__item--right .story__dot {
+    left: -53px;
+  }
+}

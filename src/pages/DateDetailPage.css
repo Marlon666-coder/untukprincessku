@@ -1,0 +1,73 @@
+.date-hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.date-hero__date {
+  font-size: var(--text-xl);
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.date-hero h1 {
+  font-size: var(--text-3xl);
+}
+
+.date-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.date-hero__chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--color-border);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  color: var(--color-text-soft);
+}
+
+a.date-hero__chip:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary-strong);
+}
+
+.date-detail-grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 900px) {
+  .date-detail-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+.date-detail__h2 {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-3);
+}
+
+.row .date-detail__h2 {
+  margin-bottom: 0;
+}
+
+.date-detail__h2--spaced {
+  margin-top: var(--space-5);
+}
+
+.date-detail__notes {
+  white-space: pre-line;
+  color: var(--color-text-soft);
+}
+
+.stack > .btn--danger {
+  align-self: flex-start;
+}

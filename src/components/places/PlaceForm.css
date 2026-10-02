@@ -1,0 +1,17 @@
+.place-form__more {
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  background: rgba(255, 240, 246, 0.5);
+  border: 1px solid var(--color-border);
+}
+
+.place-form__more summary {
+  cursor: pointer;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.place-form__more[open] summary {
+  margin-bottom: var(--space-3);
+}

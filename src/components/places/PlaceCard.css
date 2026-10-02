@@ -1,0 +1,70 @@
+.place-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-strong);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: transform var(--duration-base) var(--ease-out), box-shadow var(--duration-base);
+}
+
+.place-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.place-card__media {
+  position: relative;
+  display: block;
+  padding: 10px 10px 0;
+}
+
+.place-card__status {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+.place-card__status .badge {
+  box-shadow: var(--shadow-sm);
+}
+
+.place-card__fav {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 1;
+}
+
+.place-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: var(--space-4);
+  flex: 1;
+}
+
+.place-card__name {
+  font-size: var(--text-lg);
+}
+
+.place-card__address {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.place-card__footer {
+  width: 100%;
+  margin-top: auto;
+  padding-top: 4px;
+  --row-gap: 4px;
+}
+
+.place-card__footer .btn {
+  padding-inline: 8px;
+  margin-right: -8px;
+}

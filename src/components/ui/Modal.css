@@ -1,0 +1,107 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgba(91, 35, 64, 0.28);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: fade-in var(--duration-base) ease both;
+}
+
+.modal__dialog {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: calc(100dvh - 24px);
+  background: linear-gradient(180deg, #fffafd 0%, #ffffff 100%);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  box-shadow: var(--shadow-lg);
+  animation: slide-up var(--duration-slow) var(--ease-out) both;
+  outline: none;
+  overflow: hidden;
+}
+
+.modal__handle {
+  display: block;
+  width: 44px;
+  height: 5px;
+  margin: 10px auto 0;
+  border-radius: var(--radius-full);
+  background: var(--pink-200);
+  flex-shrink: 0;
+}
+
+.modal__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5) var(--space-2);
+  flex-shrink: 0;
+}
+
+.modal__titles {
+  min-width: 0;
+}
+
+.modal__titles h2 {
+  font-size: var(--text-xl);
+}
+
+.modal__close {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--color-primary-soft);
+  color: var(--color-primary-strong);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.modal__body {
+  padding: var(--space-3) var(--space-5) var(--space-5);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.modal__footer {
+  padding: var(--space-3) var(--space-5) calc(var(--space-4) + var(--safe-bottom));
+  border-top: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.9);
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+  .modal {
+    align-items: center;
+    padding: var(--space-6);
+  }
+
+  .modal__dialog {
+    border-radius: var(--radius-xl);
+    max-height: calc(100dvh - 48px);
+    animation: scale-in var(--duration-base) var(--ease-out) both;
+  }
+
+  .modal__handle {
+    display: none;
+  }
+
+  .modal__header {
+    padding-top: var(--space-6);
+  }
+
+  .modal__dialog--sm { max-width: 420px; }
+  .modal__dialog--md { max-width: 560px; }
+  .modal__dialog--lg { max-width: 760px; }
+  .modal__dialog--full { max-width: 1040px; }
+}

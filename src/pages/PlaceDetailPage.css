@@ -1,0 +1,25 @@
+.place-detail {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 900px) {
+  .place-detail {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+.place-detail__photo {
+  padding: 10px 10px 26px;
+  transform: rotate(-1deg);
+}
+
+.place-detail__name {
+  font-size: var(--text-3xl);
+}
+
+.place-detail__h2 {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-4);
+}

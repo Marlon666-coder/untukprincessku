@@ -1,0 +1,27 @@
+.floating-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.floating-particles__item {
+  position: absolute;
+  color: rgba(236, 119, 165, 0.55);
+  text-shadow: 0 0 12px rgba(255, 182, 213, 0.9);
+  animation: particle-rise linear infinite;
+  will-change: transform, opacity;
+}
+
+.floating-particles.is-static .floating-particles__item {
+  animation: none;
+  opacity: 0.5;
+}
+
+@keyframes particle-rise {
+  0% { transform: translate3d(0, 0, 0) scale(0.7); opacity: 0; }
+  15% { opacity: 0.9; }
+  50% { transform: translate3d(12px, -35vh, 0) scale(1); }
+  85% { opacity: 0.6; }
+  100% { transform: translate3d(-10px, -70vh, 0) scale(0.8); opacity: 0; }
+}

@@ -1,0 +1,75 @@
+.card {
+  position: relative;
+  display: block;
+  min-width: 0;
+  border-radius: var(--radius-lg);
+  color: inherit;
+  text-align: left;
+  font: inherit;
+  transition: transform var(--duration-base) var(--ease-out), box-shadow var(--duration-base);
+}
+
+.card--padded {
+  padding: var(--space-5);
+}
+
+@media (min-width: 768px) {
+  .card--padded {
+    padding: var(--space-6);
+  }
+}
+
+.card--glass {
+  background: var(--color-surface);
+  backdrop-filter: var(--blur-glass);
+  -webkit-backdrop-filter: var(--blur-glass);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: var(--shadow-md);
+}
+
+.card--solid {
+  background: var(--white);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.card--soft {
+  background: var(--gradient-soft);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Scrapbook paper with a washi-tape strip */
+.card--paper {
+  background: #fffdfb;
+  border: 1px solid rgba(214, 170, 190, 0.35);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02), 0 14px 30px -18px rgba(120, 50, 85, 0.35);
+}
+
+.card--paper::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  width: 84px;
+  height: 22px;
+  transform: translateX(-50%) rotate(-3deg);
+  background: repeating-linear-gradient(45deg, rgba(247, 155, 191, 0.55) 0 8px, rgba(255, 214, 231, 0.55) 8px 16px);
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(178, 60, 109, 0.12);
+  pointer-events: none;
+}
+
+.card--interactive {
+  cursor: pointer;
+  width: 100%;
+}
+
+.card--interactive:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card--interactive:active {
+  transform: translateY(-1px) scale(0.995);
+}
