@@ -32,9 +32,12 @@ export default function LandingPage() {
         </h1>
         <p className="landing__subtitle">Selamat datang di tempat kecil yang menyimpan cerita kita.</p>
         <div className="landing__actions">
-          <Button to={ROUTES.home} size="lg" className="landing__cta">
-            Masuk ke cerita kita ♡
+          <Button to={ROUTES.world} size="lg" className="landing__cta">
+            ✨ Masuk ke Love Pixel World ♡
           </Button>
+          <Link to={ROUTES.home} className="landing__login">
+            Buka scrapbook cerita kita →
+          </Link>
           <Link to={ROUTES.login} className="landing__login">
             Login
           </Link>

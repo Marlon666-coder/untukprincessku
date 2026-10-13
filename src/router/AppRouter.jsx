@@ -7,6 +7,7 @@ import { AuthLayout } from '../layouts/AuthLayout';
 
 // Pages are code-split so the landing page loads fast.
 const LandingPage = lazy(() => import('../pages/LandingPage'));
+const LoveWorldPage = lazy(() => import('../pages/LoveWorldPage'));
 const LoginPage = lazy(() => import('../pages/LoginPage'));
 const HomePage = lazy(() => import('../pages/HomePage'));
 const DatesPage = lazy(() => import('../pages/DatesPage'));
@@ -35,6 +36,7 @@ export function AppRouter() {
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path={ROUTES.landing} element={<LandingPage />} />
+          <Route path={ROUTES.world} element={<LoveWorldPage />} />
 
           <Route element={<AuthLayout />}>
             <Route path={ROUTES.login} element={<LoginPage />} />
